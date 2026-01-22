@@ -1,29 +1,25 @@
-#Camila Richter
-
+# Camila Richter
 import math
 
-class Task3:
-    y_real = [100, 150, 200, 250, 300]
-    y_prediccion = [110, 140, 210, 240, 500]
+def calcular_error_individual(y_real, y_pred):
+    errores = []
+    for i in range(len(y_real)):
+        errores.append(y_real[i] - y_pred[i])
+    return errores
 
-    def calcular_error_individual:
-        n = len(y_real)
-        errores = []
 
-        for i in range(n):
-            error = y_real[i] - y_pred[i]
-            errores.append(error)
-            
-        return y_error
+def RMSE(y_real, y_pred):
+    suma = 0
+    for i in range(len(y_real)):
+        error = y_real[i] - y_pred[i]
+        suma += error ** 2
+    return math.sqrt(suma / len(y_real))
 
-    def RMSE:
-        n = len(y_real)
-        suma = 0
 
-        for i in range(n):
-            error = y_real[i] - y_pred[i]
-            suma += error ** 2
-
-        return math.sqrt(suma / n)
+def MAE(y_real, y_pred):
+    suma = 0
+    for i in range(len(y_real)):
+        suma += abs(y_real[i] - y_pred[i])
+    return suma / len(y_real)
 
     
