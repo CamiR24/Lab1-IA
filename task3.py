@@ -15,3 +15,15 @@ class Task3:
             errores.append(error)
             
         return y_error
+
+    def RMSE:
+        n = len(y_real)
+        suma = 0
+
+        for i in range(n):
+            error = y_real[i] - y_pred[i]
+            suma += error ** 2
+
+        return math.sqrt(suma / n)
+
+    
